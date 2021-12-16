@@ -22,11 +22,11 @@
     "url": "git+https://github.com/badsyntax/s3-etag.git"
   },
   "keywords": [
-    "actions",
-    "node",
-    "setup",
-    "aws",
-    "cloudfront"
+    "s3",
+    "etag",
+    "hash",
+    "md5",
+    "aws"
   ],
   "author": "Richard Willis <willis.rh@gmail.com>",
   "license": "MIT",
