@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": false,
   "description": "Generate an S3 ETAG for multipart uploads in Node.js",
-  "exports": "./lib/index.js",
+  "exports": "./index.js",
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
