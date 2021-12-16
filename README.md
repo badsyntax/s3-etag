@@ -1,5 +1,8 @@
 # S3 ETAG
 
+[![Build, Test & Publish](https://github.com/badsyntax/s3-etag/actions/workflows/build-test-publish.yml/badge.svg)](https://github.com/badsyntax/s3-etag/actions/workflows/build-test-publish.yml)
+[![CodeQL](https://github.com/badsyntax/s3-etag/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/badsyntax/s3-etag/actions/workflows/codeql-analysis.yml)
+
 Generate an accurate S3 ETAG for any file (including multipart).
 
 ## Installation
