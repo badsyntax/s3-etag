@@ -1,0 +1,43 @@
+name: 'Build, Test & Publish'
+
+on:
+  release:
+    types: [published]
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-test-publish:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish
+        if: github.event_name == 'release' && github.event.action == 'published'
+        run: |
+          tag=${GITHUB_REF#refs/tags/}
+          echo "Setting package version $tag"
+          cd lib
+          npm --no-git-tag-version version "$tag"
+          npm run publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
