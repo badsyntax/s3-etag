@@ -38,6 +38,6 @@ jobs:
           echo "Setting package version $tag"
           cd lib
           npm --no-git-tag-version version "$tag"
-          npm run publish
+          npm publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
