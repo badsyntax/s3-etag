@@ -3,6 +3,7 @@
 #
 # From: https://gist.github.com/emersonf/7413337
 # Author: Emerson Farrugia <https://github.com/emersonf>
+#
 # Modified by: Richard Willis <https://github.com/badsyntax>
 # Modifications: Work with bytes instead of MB.
 #
