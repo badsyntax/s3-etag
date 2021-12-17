@@ -2,7 +2,7 @@
   "name": "s3-etag",
   "version": "0.0.0",
   "private": false,
-  "description": "Generate an S3 ETAG for multipart uploads in Node.js",
+  "description": "Generate an accurate S3 ETAG for multipart uploads in Node.js",
   "exports": "./index.js",
   "type": "module",
   "scripts": {
