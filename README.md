@@ -11,8 +11,6 @@ Generate an accurate S3 ETAG for any file (including multipart).
 npm install s3-etag
 ```
 
-(TypeScript type definitions are included in the package.)
-
 ## Usage
 
 ```ts
