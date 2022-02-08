@@ -27,8 +27,8 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "engines": {
-    "node": "^16",
-    "npm": "^8"
+    "node": "^14",
+    "npm": "^7"
   },
   "repository": {
     "type": "git",
