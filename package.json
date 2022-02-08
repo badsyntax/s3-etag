@@ -14,10 +14,6 @@
   },
   "types": "./esm/index.d.ts",
   "type": "module",
-  "sideEffects": false,
-  "publishConfig": {
-    "registry": "https://pkgs.dev.azure.com/chevin-devops/_packaging/chevin-npm/npm/registry/"
-  },
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
     "build:cjs": "tsc -p tsconfig.build.cjs.json",
