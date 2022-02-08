@@ -3,8 +3,8 @@
  * An implementation of this algorithm: https://stackoverflow.com/a/19896823/492325
  * Author: Richard Willis <willis.rh@gmail.com>
  */
-import fs from 'node:fs';
-import crypto, { BinaryLike } from 'node:crypto';
+import fs from 'fs';
+import crypto, { BinaryLike } from 'crypto';
 
 export const defaultPartSizeInBytes = 5 * 1024 * 1024; // 5MB
 
