@@ -3,11 +3,28 @@
   "version": "0.0.0",
   "private": false,
   "description": "Generate an accurate S3 ETAG for multipart uploads in Node.js",
-  "exports": "./index.js",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "require": "./cjs/index.js",
+      "default": "./esm/index.js"
+    }
+  },
+  "types": "./esm/index.d.ts",
   "type": "module",
+  "sideEffects": false,
+  "publishConfig": {
+    "registry": "https://pkgs.dev.azure.com/chevin-devops/_packaging/chevin-npm/npm/registry/"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:cjs": "tsc -p tsconfig.build.cjs.json",
+    "build:esm": "tsc -p tsconfig.build.esm.json",
+    "prebuild": "rimraf lib",
     "postbuild": "cp package.json README.md LICENSE.md lib/",
+    "postbuild:cjs": "echo '{\"type\":\"commonjs\"}' > lib/cjs/package.json && echo '{\"type\":\"module\"}' > lib/esm/package.json",
     "format": "prettier --write '**/*.{ts,json,svg,md,yml}'",
     "format-check": "prettier --check '**/*.{ts,json,svg,md,yml}'",
     "lint": "eslint src/**/*.ts",
