@@ -13,10 +13,11 @@ function md5(contents: string | BinaryLike): string {
 }
 
 export function generateETag(filePath: string, partSizeInBytes = 0): string {
-  if (partSizeInBytes === 0) {
+  const { size: fileSizeInBytes } = fs.statSync(filePath);
+
+  if (partSizeInBytes === 0 || fileSizeInBytes <= partSizeInBytes) {
     return md5(fs.readFileSync(filePath));
   }
-  const { size: fileSizeInBytes } = fs.statSync(filePath);
   let parts = Math.floor(fileSizeInBytes / partSizeInBytes);
   if (fileSizeInBytes % partSizeInBytes > 0) {
     parts += 1;

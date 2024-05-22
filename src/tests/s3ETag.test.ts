@@ -16,4 +16,9 @@ describe('s3ETag', () => {
     const etag = generateETag(stylesFilePath, 10);
     expect(etag).toBe('b8ffa274b982363604db211ee8ffb991-3');
   });
+
+  it('should generate an eTag which is just the MD5 of the file for a non-multipart upload file when file size is smaller than the part size ', () => {
+    const etag = generateETag(stylesFilePath, 2048);
+    expect(etag).not.toContain('-');
+  });
 });
